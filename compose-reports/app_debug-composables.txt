@@ -1,0 +1,25 @@
+restartable skippable fun NoParameterCompose()
+restartable skippable fun DefaultConstructorParameterCompose(
+  stable text: String? = @dynamic String()
+)
+restartable skippable fun DefaultNullValueParameterCompose(
+  stable text: String? = @static null
+)
+restartable skippable fun DefaultStaticValueParameterCompose(
+  stable text: String? = @dynamic LiveLiterals$ComposableKt.String$param-text$fun-DefaultStaticValueParameterCompose()
+)
+restartable skippable fun DefaultArrayListParameterCompose(
+  unstable text: ArrayList<String>? = @dynamic arrayListOf(LiveLiterals$ComposableKt.String$0$vararg$arg-0$call-arrayListOf$param-text$fun-DefaultArrayListParameterCompose())
+)
+restartable skippable fun StateArrayListParameterCompose(
+  stable text: State<ArrayList<String>>
+)
+restartable fun UnstableDataClassParameterCompose(
+  unstable text: UnstableDataClass
+)
+restartable skippable fun StableDataClassParameterCompose(
+  stable text: StableDataClass
+)
+restartable skippable fun AnnotatedDataClassParameterCompose(
+  stable text: AnnotatedUnstableDataClass
+)

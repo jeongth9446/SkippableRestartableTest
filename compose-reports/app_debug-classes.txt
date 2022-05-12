@@ -1,0 +1,17 @@
+unstable class UnstableDataClass {
+  stable var a: Int
+  stable var b: Int
+  stable var c: Int
+  <runtime stability> = Unstable
+}
+stable class StableDataClass {
+  stable val a: Int
+  stable val b: Int
+  stable val c: Int
+  <runtime stability> = Stable
+}
+stable class AnnotatedUnstableDataClass {
+  stable var a: Int
+  stable var b: Int
+  stable var c: Int
+}
