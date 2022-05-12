@@ -50,8 +50,8 @@ fun StateArrayListTest() {
         while(true) {
             delay(1000)
             testVal += 1
-            //rememberArrayList.value.add("test $testVal")
-            stateArrayList.value = arrayListOf("test $testVal")
+            rememberArrayList.value.add("test $testVal") //observable 하지 않음
+            stateArrayList.value = arrayListOf("test $testVal") //observable 함
         }
 
     }
@@ -66,16 +66,16 @@ fun StateArrayListTest() {
             Greeting("Android")
             Column() {
                 Log.d("Recompose", "textVal Updated : $testVal")
-                NoParameterCompose()
-                DefaultConstructorParameterCompose(String())
-                DefaultNullValueParameterCompose()
-                DefaultStaticValueParameterCompose()
-                DefaultArrayListParameterCompose()
-                DefaultArrayListParameterCompose(rememberArrayList.value)
-                StateArrayListParameterCompose(stateArrayList)
-                UnstableDataClassParameterCompose(rememberUnstableDataClass.value)
-                StableDataClassParameterCompose(StableDataClass(1, 2, 3))
-                AnnotatedDataClassParameterCompose(AnnotatedUnstableDataClass(testVal, 2, 3))
+                NoParameterCompose() //recomposition 하지 않음.
+                DefaultConstructorParameterCompose(String()) //recomposition 하지 않음.
+                DefaultNullValueParameterCompose() //recomposition 하지 않음.
+                DefaultStaticValueParameterCompose() //recomposition 하지 않음.
+                DefaultArrayListParameterCompose() //recomposition 하지 않음.
+                DefaultArrayListParameterCompose(rememberArrayList.value) //recomposition 하지 않음.
+                StateArrayListParameterCompose(stateArrayList) //recomposition함
+                UnstableDataClassParameterCompose(rememberUnstableDataClass.value) //항상 recomposition함
+                StableDataClassParameterCompose(StableDataClass(1, 2, 3)) //smart recomposition
+                AnnotatedDataClassParameterCompose(AnnotatedUnstableDataClass(testVal, 2, 3)) //smart recomposition
             }
         }
     }
